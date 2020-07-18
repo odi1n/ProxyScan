@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProxyScanIo
 {
-    public class Class1
+    public class ProxyScanApi
     {
     }
 }
