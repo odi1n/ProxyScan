@@ -1,4 +1,4 @@
-# ProxyScan-Api
+# ProxyScan Api
 Реализация Api для сервиса [ProxyScan](https://www.proxyscan.io/api), который дает возможность получить free proxy.
 
 Получить рандомное прокси
