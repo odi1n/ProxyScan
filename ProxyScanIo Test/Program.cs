@@ -11,7 +11,8 @@ namespace ProxyScanIo_Test
     {
         static void Main(string[] args)
         {
-            var proxy = new ProxyScanApi().GetProxy();
+            var proxyScan = new ProxyScanApi();
+            var proxy = proxyScan.GetProxy(type:ProxyScanIo.Enums.TypeProxy.SOCKS4, limit:5);
             foreach (var prox in proxy)
                 Console.WriteLine(prox.ToString());
         }
