@@ -22,12 +22,12 @@ namespace ProxyScanIo
         /// <param name="lastCheck">Seconds the proxy was last checked</param>
         /// <param name="port">Proxies with a specific port	</param>
         /// <param name="ping">How fast you get a response after you've sent out a request	</param>
-        /// <param name="limit">How many proxies to list.</param>
-        /// <param name="upTime">How reliably a proxy has been running</param>
+        /// <param name="limit">How many proxies to list. Maxsimum - 20</param>
+        /// <param name="upTime">How reliably a proxy has been running. Minimum = 0, maximum - 100</param>
         /// <param name="country">Country of the proxy</param>
         /// <param name="notCountry">Avoid proxy countries</param>
         /// <returns></returns>
-        public List<Proxy> GetProxy(Anonymity? level = null, ProxyType? type = null, int? lastCheck = null, int? port = null, int? ping = null, int? limit = null
+        public List<Proxy> GetProxy(Anonymity? level = null, TypeProxy? type = null, int? lastCheck = null, int? port = null, int? ping = null, int? limit = null
             , int? upTime = null, Country? country = null, Country? notCountry = null)
         {
             RequestParams param = new RequestParams()
@@ -42,7 +42,7 @@ namespace ProxyScanIo
                 ["country"]=country,
                 ["not_country"]=notCountry,
             };
-            var response = _request.Get("https://www.proxyscan.io/api/proxy", param).ToString();
+            var response = _request.Get("https://www.proxyscan.io/api/proxy", param).ToString().Replace("\r\n","").Trim();
             return JsonConvert.DeserializeObject<List<Proxy>>(response);
         }
     }

@@ -1,5 +1,4 @@
-﻿using Leaf.xNet;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using ProxyScanIo.Enums;
 using System;
 using System.Collections.Generic;
@@ -27,7 +26,7 @@ namespace ProxyScanIo.Models
         public Location Location { get; set; }
 
         [JsonProperty("Type")]
-        public List<ProxyType> Type { get; set; }
+        public List<TypeProxy> Type { get; set; }
 
         [JsonProperty("Failed")]
         public bool Failed { get; set; }
@@ -43,5 +42,10 @@ namespace ProxyScanIo.Models
 
         [JsonProperty("RecheckCount")]
         public long RecheckCount { get; set; }
+
+        public override string ToString()
+        {
+            return Ip+":"+Port;
+        }
     }
 }
