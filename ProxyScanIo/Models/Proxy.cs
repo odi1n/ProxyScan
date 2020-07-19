@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Leaf.xNet;
+using Newtonsoft.Json;
 using ProxyScanIo.Enums;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace ProxyScanIo.Models
         public Location Location { get; set; }
 
         [JsonProperty("Type")]
-        public List<TypeProxy> Type { get; set; }
+        public List<ProxyType> Type { get; set; }
 
         [JsonProperty("Failed")]
         public bool Failed { get; set; }

@@ -27,7 +27,7 @@ namespace ProxyScanIo
         /// <param name="country">Country of the proxy</param>
         /// <param name="notCountry">Avoid proxy countries</param>
         /// <returns></returns>
-        public List<Proxy> GetProxy(Anonymity? level = null, TypeProxy? type = null, int? lastCheck = null, int? port = null, int? ping = null, int? limit = null
+        public List<Proxy> GetProxy(Anonymity? level = null, ProxyType? type = null, int? lastCheck = null, int? port = null, int? ping = null, int? limit = null
             , int? upTime = null, Country? country = null, Country? notCountry = null)
         {
             RequestParams param = new RequestParams()
